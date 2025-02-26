@@ -100,8 +100,86 @@
                 </div>
                 <div class="result" id="result2"></div>
             </div>
-            <!-- Add remaining MCQs similarly (up to Q10) -->
-            <!-- For brevity, I'll include Q3-Q10 in the JS answers array -->
+            <div class="question">
+                <p>3. Which business function is responsible for advertising and branding?</p>
+                <div class="mcq">
+                    <label><input type="radio" name="q3" value="a"> a) Human Resources</label>
+                    <label><input type="radio" name="q3" value="b"> b) Finance</label>
+                    <label><input type="radio" name="q3" value="c"> c) Marketing</label>
+                    <label><input type="radio" name="q3" value="d"> d) Operations Management</label>
+                </div>
+                <div class="result" id="result3"></div>
+            </div>
+            <div class="question">
+                <p>4. A Sole Trader has:</p>
+                <div class="mcq">
+                    <label><input type="radio" name="q4" value="a"> a) Limited liability</label>
+                    <label><input type="radio" name="q4" value="b"> b) Unlimited liability</label>
+                    <label><input type="radio" name="q4" value="c"> c) Shares traded on the stock exchange</label>
+                    <label><input type="radio" name="q4" value="d"> d) Multiple owners</label>
+                </div>
+                <div class="result" id="result4"></div>
+            </div>
+            <div class="question">
+                <p>5. Which of the following is an example of a Quaternary Sector activity?</p>
+                <div class="mcq">
+                    <label><input type="radio" name="q5" value="a"> a) Mining coal</label>
+                    <label><input type="radio" name="q5" value="b"> b) Building houses</label>
+                    <label><input type="radio" name="q5" value="c"> c) IT consultancy</label>
+                    <label><input type="radio" name="q5" value="d"> d) Retail sales</label>
+                </div>
+                <div class="result" id="result5"></div>
+            </div>
+            <div class="question">
+                <p>6. What does CSR stand for in business objectives?</p>
+                <div class="mcq">
+                    <label><input type="radio" name="q6" value="a"> a) Customer Service Review</label>
+                    <label><input type="radio" name="q6" value="b"> b) Corporate Social Responsibility</label>
+                    <label><input type="radio" name="q6" value="c"> c) Cost Saving Reduction</label>
+                    <label><input type="radio" name="q6" value="d"> d) Company Stock Resources</label>
+                </div>
+                <div class="result" id="result6"></div>
+            </div>
+            <div class="question">
+                <p>7. A Public Limited Company (Plc.) differs from a Private Limited Company (Ltd.) because:</p>
+                <div class="mcq">
+                    <label><input type="radio" name="q7" value="a"> a) It has unlimited liability</label>
+                    <label><input type="radio" name="q7" value="b"> b) Its shares are sold on the stock exchange</label>
+                    <label><input type="radio" name="q7" value="c"> c) It has fewer regulations</label>
+                    <label><input type="radio" name="q7" value="d"> d) It cannot raise large amounts of capital</label>
+                </div>
+                <div class="result" id="result7"></div>
+            </div>
+            <div class="question">
+                <p>8. In a SWOT analysis, high costs would be classified as:</p>
+                <div class="mcq">
+                    <label><input type="radio" name="q8" value="a"> a) Strength</label>
+                    <label><input type="radio" name="q8" value="b"> b) Weakness</label>
+                    <label><input type="radio" name="q8" value="c"> c) Opportunity</label>
+                    <label><input type="radio" name="q8" value="d"> d) Threat</label>
+                </div>
+                <div class="result" id="result8"></div>
+            </div>
+            <div class="question">
+                <p>9. Which STEEPLE factor relates to government policies and taxes?</p>
+                <div class="mcq">
+                    <label><input type="radio" name="q9" value="a"> a) Social</label>
+                    <label><input type="radio" name="q9" value="b"> b) Technological</label>
+                    <label><input type="radio" name="q9" value="c"> c) Political</label>
+                    <label><input type="radio" name="q9" value="d"> d) Environmental</label>
+                </div>
+                <div class="result" id="result9"></div>
+            </div>
+            <div class="question">
+                <p>10. A business plan includes all EXCEPT:</p>
+                <div class="mcq">
+                    <label><input type="radio" name="q10" value="a"> a) Market research</label>
+                    <label><input type="radio" name="q10" value="b"> b) Financial projections</label>
+                    <label><input type="radio" name="q10" value="c"> c) Employee personal hobbies</label>
+                    <label><input type="radio" name="q10" value="d"> d) Operations plan</label>
+                </div>
+                <div class="result" id="result10"></div>
+            </div>
             <button type="button" onclick="checkMCQ()">Submit Section A</button>
         </form>
     </div>
@@ -120,7 +198,31 @@
                 <textarea id="q12" placeholder="Your answer here..."></textarea>
                 <div class="result" id="result12"></div>
             </div>
-            <!-- Add remaining short-answer questions (up to Q17) -->
+            <div class="question">
+                <p>13. What is the role of Operations Management in a business? (4 marks)</p>
+                <textarea id="q13" placeholder="Your answer here..."></textarea>
+                <div class="result" id="result13"></div>
+            </div>
+            <div class="question">
+                <p>14. Define unlimited liability and give an example of a business entity that has it. (4 marks)</p>
+                <textarea id="q14" placeholder="Your answer here..."></textarea>
+                <div class="result" id="result14"></div>
+            </div>
+            <div class="question">
+                <p>15. Describe two objectives a startup business might prioritize and explain why. (4 marks)</p>
+                <textarea id="q15" placeholder="Your answer here..."></textarea>
+                <div class="result" id="result15"></div>
+            </div>
+            <div class="question">
+                <p>16. Explain what is meant by 'Opportunities' in a SWOT analysis and provide an example. (4 marks)</p>
+                <textarea id="q16" placeholder="Your answer here..."></textarea>
+                <div class="result" id="result16"></div>
+            </div>
+            <div class="question">
+                <p>17. Identify two external factors from the STEEPLE analysis that could affect a retail business and explain their impact. (6 marks)</p>
+                <textarea id="q17" placeholder="Your answer here..."></textarea>
+                <div class="result" id="result17"></div>
+            </div>
             <button type="button" onclick="checkShortAnswers()">Submit Section B</button>
         </form>
     </div>
@@ -128,14 +230,33 @@
     <!-- Section C: Case Study -->
     <div class="section">
         <h2>Section C: Case Study (30 marks)</h2>
-        <p><strong>Case Study: FreshFarm Co.</strong> FreshFarm Co. is a small business started by Anna, who grows organic vegetables on her family’s land...</p>
+        <p><strong>Case Study: FreshFarm Co.</strong> FreshFarm Co. is a small business started by Anna, who grows organic vegetables on her family’s land. She sells her produce at local markets and has recently hired two employees to help with harvesting and sales. Anna operates as a Sole Trader but is considering forming a Partnership with her brother to expand the business. Her goals are to increase revenue and ensure the business remains environmentally sustainable. However, she’s worried about competition from larger farms and changing weather patterns due to climate change.</p>
         <form id="caseStudyForm">
             <div class="question">
                 <p>18. Identify the sector of industry FreshFarm Co. operates in and justify your answer. (4 marks)</p>
                 <textarea id="q18" placeholder="Your answer here..."></textarea>
                 <div class="result" id="result18"></div>
             </div>
-            <!-- Add remaining case study questions (up to Q22) -->
+            <div class="question">
+                <p>19. Conduct a brief SWOT analysis for FreshFarm Co. (include one point for each category: Strengths, Weaknesses, Opportunities, Threats). (8 marks)</p>
+                <textarea id="q19" placeholder="Your answer here..."></textarea>
+                <div class="result" id="result19"></div>
+            </div>
+            <div class="question">
+                <p>20. Recommend whether Anna should switch to a Partnership with her brother. Justify your recommendation with two reasons. (6 marks)</p>
+                <textarea id="q20" placeholder="Your answer here..."></textarea>
+                <div class="result" id="result20"></div>
+            </div>
+            <div class="question">
+                <p>21. Using the STEEPLE framework, identify and explain one external factor (other than Environmental) that could impact FreshFarm Co. and suggest how Anna could respond to it. (6 marks)</p>
+                <textarea id="q21" placeholder="Your answer here..."></textarea>
+                <div class="result" id="result21"></div>
+            </div>
+            <div class="question">
+                <p>22. Outline two key components Anna should include in a business plan if she decides to expand FreshFarm Co. (6 marks)</p>
+                <textarea id="q22" placeholder="Your answer here..."></textarea>
+                <div class="result" id="result22"></div>
+            </div>
             <button type="button" onclick="checkCaseStudy()">Submit Section C</button>
         </form>
     </div>
@@ -260,58 +381,6 @@
         function updateTotalScore() {
             document.getElementById("totalScore").textContent = `Total Score: ${totalScore}/100`;
         }
-
-        // Dynamically add remaining questions (for brevity in this example)
-        const mcqForm = document.getElementById("mcqForm");
-        const shortAnswerForm = document.getElementById("shortAnswerForm");
-        const caseStudyForm = document.getElementById("caseStudyForm");
-
-        const mcqQuestions = [
-            "3. Which business function is responsible for advertising and branding?",
-            "4. A Sole Trader has:",
-            "5. Which of the following is an example of a Quaternary Sector activity?",
-            "6. What does CSR stand for in business objectives?",
-            "7. A Public Limited Company (Plc.) differs from a Private Limited Company (Ltd.) because:",
-            "8. In a SWOT analysis, high costs would be classified as:",
-            "9. Which STEEPLE factor relates to government policies and taxes?",
-            "10. A business plan includes all EXCEPT:"
-        ];
-
-        const shortAnswerQuestions = [
-            "13. What is the role of Operations Management in a business? (4 marks)",
-            "14. Define unlimited liability and give an example of a business entity that has it. (4 marks)",
-            "15. Describe two objectives a startup business might prioritize and explain why. (4 marks)",
-            "16. Explain what is meant by 'Opportunities' in a SWOT analysis and provide an example. (4 marks)",
-            "17. Identify two external factors from the STEEPLE analysis that could affect a retail business and explain their impact. (6 marks)"
-        ];
-
-        const caseStudyQuestions = [
-            "19. Conduct a brief SWOT analysis for FreshFarm Co. (include one point for each category: Strengths, Weaknesses, Opportunities, Threats). (8 marks)",
-            "20. Recommend whether Anna should switch to a Partnership with her brother. Justify your recommendation with two reasons. (6 marks)",
-            "21. Using the STEEPLE framework, identify and explain one external factor (other than Environmental) that could impact FreshFarm Co. and suggest how Anna could respond to it. (6 marks)",
-            "22. Outline two key components Anna should include in a business plan if she decides to expand FreshFarm Co. (6 marks)"
-        ];
-
-        mcqQuestions.forEach((q, i) => {
-            const div = document.createElement("div");
-            div.className = "question";
-            div.innerHTML = `<p>${q}</p><div class="mcq"></div><div class="result" id="result${i+3}"></div>`;
-            mcqForm.insertBefore(div, mcqForm.lastElementChild);
-        });
-
-        shortAnswerQuestions.forEach((q, i) => {
-            const div = document.createElement("div");
-            div.className = "question";
-            div.innerHTML = `<p>${q}</p><textarea id="q${i+13}" placeholder="Your answer here..."></textarea><div class="result" id="result${i+13}"></div>`;
-            shortAnswerForm.insertBefore(div, shortAnswerForm.lastElementChild);
-        });
-
-        caseStudyQuestions.forEach((q, i) => {
-            const div = document.createElement("div");
-            div.className = "question";
-            div.innerHTML = `<p>${q}</p><textarea id="q${i+19}" placeholder="Your answer here..."></textarea><div class="result" id="result${i+19}"></div>`;
-            caseStudyForm.insertBefore(div, caseStudyForm.lastElementChild);
-        });
     </script>
 </body>
 </html>
