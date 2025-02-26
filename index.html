@@ -64,6 +64,10 @@
             background-color: #f8d7da;
             color: #721c24;
         }
+        .example {
+            background-color: #fff3cd;
+            color: #856404;
+        }
         #totalScore {
             font-size: 18px;
             font-weight: bold;
@@ -300,7 +304,7 @@
             q22: "Market research (demand/competitors) and Finance (costs/revenue)."
         };
 
-        const essayKey = "A Plc. raises large capital via shares but faces takeover risks and regulations. An Ltd. has limited liability and control but less funding. A Plc. suits a tech firm for rapid scaling.";
+        const essayExample = "A Public Limited Company (Plc.) offers significant advantages over a Private Limited Company (Ltd.), such as the ability to raise large amounts of capital by selling shares on the stock exchange. This allows a Plc. to fund expansion or innovation quickly, which is crucial for a fast-growing technology firm needing substantial investment in research and development. However, a Plc. faces disadvantages like the risk of takeovers by external investors and stricter regulatory requirements, which can reduce control for original owners. In contrast, an Ltd. benefits from limited liability, protecting owners' personal assets, and greater control since shares are not publicly traded, but it struggles to raise large funds due to restricted share ownership. For a tech firm aiming to scale rapidly, a Plc. is better suited because access to capital outweighs the loss of control in a competitive, innovation-driven industry. The firm could leverage public investment to develop cutting-edge products, outpacing competitors. Still, it must manage shareholder expectations and comply with regulations to maintain its growth trajectory effectively.";
 
         let totalScore = 0;
 
@@ -367,13 +371,16 @@
             const answer = document.getElementById("q23").value.trim().toLowerCase();
             const resultDiv = document.getElementById("result23");
             resultDiv.style.display = "block";
-            if (answer.length > 150 && answer.includes("plc") && answer.includes("ltd") && answer.includes("tech")) {
+            if (answer === "") {
+                resultDiv.className = "result example";
+                resultDiv.textContent = `No answer provided. Here’s an example essay (0/20):\n\n${essayExample}`;
+            } else if (answer.length > 150 && answer.includes("plc") && answer.includes("ltd") && answer.includes("tech")) {
                 totalScore += 20;
                 resultDiv.className = "result correct";
                 resultDiv.textContent = "Correct! Well-structured response. (20/20)";
             } else {
                 resultDiv.className = "result incorrect";
-                resultDiv.textContent = `Incorrect. Expected: ${essayKey} (0/20)`;
+                resultDiv.textContent = `Incorrect. Expected a detailed response discussing Plc vs Ltd and suitability for a tech firm. (0/20)`;
             }
             updateTotalScore();
         }
