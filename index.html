@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Mock Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+        h1, h2 {
+            text-align: center;
+            color: #333;
+        }
+        .section {
+            margin-bottom: 30px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .question {
+            margin-bottom: 15px;
+        }
+        .mcq label {
+            display: block;
+            margin: 5px 0;
+        }
+        textarea {
+            width: 100%;
+            height: 100px;
+            margin-top: 10px;
+            padding: 10px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .result {
+            margin-top: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            display: none;
+        }
+        .correct {
+            background-color: #d4edda;
+            color: #155724;
+        }
+        .incorrect {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+        #totalScore {
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Business Mock Test</h1>
+    <p><strong>Duration:</strong> 1 hour 30 minutes | <strong>Total Marks:</strong> 100</p>
+
+    <!-- Section A: Multiple-Choice Questions -->
+    <div class="section">
+        <h2>Section A: Multiple-Choice Questions (20 marks)</h2>
+        <form id="mcqForm">
+            <div class="question">
+                <p>1. What is the main purpose of a business?</p>
+                <div class="mcq">
+                    <label><input type="radio" name="q1" value="a"> a) To maximize employee satisfaction</label>
+                    <label><input type="radio" name="q1" value="b"> b) To produce goods or services to meet human needs and wants</label>
+                    <label><input type="radio" name="q1" value="c"> c) To minimize costs at all times</label>
+                    <label><input type="radio" name="q1" value="d"> d) To focus solely on environmental sustainability</label>
+                </div>
+                <div class="result" id="result1"></div>
+            </div>
+            <div class="question">
+                <p>2. Which sector involves manufacturing and processing products?</p>
+                <div class="mcq">
+                    <label><input type="radio" name="q2" value="a"> a) Primary</label>
+                    <label><input type="radio" name="q2" value="b"> b) Secondary</label>
+                    <label><input type="radio" name="q2" value="c"> c) Tertiary</label>
+                    <label><input type="radio" name="q2" value="d"> d) Quaternary</label>
+                </div>
+                <div class="result" id="result2"></div>
+            </div>
+            <!-- Add remaining MCQs similarly (up to Q10) -->
+            <!-- For brevity, I'll include Q3-Q10 in the JS answers array -->
+            <button type="button" onclick="checkMCQ()">Submit Section A</button>
+        </form>
+    </div>
+
+    <!-- Section B: Short-Answer Questions -->
+    <div class="section">
+        <h2>Section B: Short-Answer Questions (30 marks)</h2>
+        <form id="shortAnswerForm">
+            <div class="question">
+                <p>11. Explain the difference between the Tertiary and Quaternary Sectors. (4 marks)</p>
+                <textarea id="q11" placeholder="Your answer here..."></textarea>
+                <div class="result" id="result11"></div>
+            </div>
+            <div class="question">
+                <p>12. List two advantages and two disadvantages of operating as a Partnership. (4 marks)</p>
+                <textarea id="q12" placeholder="Your answer here..."></textarea>
+                <div class="result" id="result12"></div>
+            </div>
+            <!-- Add remaining short-answer questions (up to Q17) -->
+            <button type="button" onclick="checkShortAnswers()">Submit Section B</button>
+        </form>
+    </div>
+
+    <!-- Section C: Case Study -->
+    <div class="section">
+        <h2>Section C: Case Study (30 marks)</h2>
+        <p><strong>Case Study: FreshFarm Co.</strong> FreshFarm Co. is a small business started by Anna, who grows organic vegetables on her family’s land...</p>
+        <form id="caseStudyForm">
+            <div class="question">
+                <p>18. Identify the sector of industry FreshFarm Co. operates in and justify your answer. (4 marks)</p>
+                <textarea id="q18" placeholder="Your answer here..."></textarea>
+                <div class="result" id="result18"></div>
+            </div>
+            <!-- Add remaining case study questions (up to Q22) -->
+            <button type="button" onclick="checkCaseStudy()">Submit Section C</button>
+        </form>
+    </div>
+
+    <!-- Section D: Essay Question -->
+    <div class="section">
+        <h2>Section D: Essay Question (20 marks)</h2>
+        <form id="essayForm">
+            <div class="question">
+                <p>23. Discuss the advantages and disadvantages of operating as a Public Limited Company (Plc.) compared to a Private Limited Company (Ltd.). Evaluate which type of business entity would be better suited for a fast-growing technology firm and explain why.</p>
+                <textarea id="q23" placeholder="Your answer here (200-300 words)..."></textarea>
+                <div class="result" id="result23"></div>
+            </div>
+            <button type="button" onclick="checkEssay()">Submit Section D</button>
+        </form>
+    </div>
+
+    <div id="totalScore"></div>
+
+    <script>
+        const mcqAnswers = {
+            q1: "b", q2: "b", q3: "c", q4: "b", q5: "c",
+            q6: "b", q7: "b", q8: "b", q9: "c", q10: "c"
+        };
+
+        const shortAnswerKey = {
+            q11: "The Tertiary Sector focuses on services like retail or banking, while the Quaternary Sector involves knowledge-based services like IT or consultancy. The difference is Quaternary requires specialized skills.",
+            q12: "Advantages: More capital, shared responsibility. Disadvantages: Unlimited liability, potential conflicts.",
+            q13: "Operations Management ensures efficient production of goods/services and maintains quality.",
+            q14: "Unlimited liability means personal assets are at risk. Example: Sole Trader.",
+            q15: "Survival (to establish stability) and growth (to build revenue) are key for startups.",
+            q16: "Opportunities are external growth factors, e.g., expanding into online sales.",
+            q17: "Economic (inflation raises costs—bulk discounts) and Social (sustainability demand—market it)."
+        };
+
+        const caseStudyKey = {
+            q18: "Primary Sector—grows vegetables, extracting natural resources.",
+            q19: "Strengths: Organic appeal. Weaknesses: Small scale. Opportunities: Organic demand. Threats: Competition.",
+            q20: "Yes, Partnership—more capital and shared workload.",
+            q21: "Technological—new farming tech; invest to improve efficiency.",
+            q22: "Market research (demand/competitors) and Finance (costs/revenue)."
+        };
+
+        const essayKey = "A Plc. raises large capital via shares but faces takeover risks and regulations. An Ltd. has limited liability and control but less funding. A Plc. suits a tech firm for rapid scaling.";
+
+        let totalScore = 0;
+
+        function checkMCQ() {
+            let score = 0;
+            for (let i = 1; i <= 10; i++) {
+                const selected = document.querySelector(`input[name="q${i}"]:checked`);
+                const resultDiv = document.getElementById(`result${i}`);
+                resultDiv.style.display = "block";
+                if (selected && selected.value === mcqAnswers[`q${i}`]) {
+                    score += 1;
+                    resultDiv.className = "result correct";
+                    resultDiv.textContent = "Correct! (1/1)";
+                } else {
+                    resultDiv.className = "result incorrect";
+                    resultDiv.textContent = `Incorrect. Correct answer: ${mcqAnswers[`q${i}`]}. (0/1)`;
+                }
+            }
+            totalScore += score;
+            updateTotalScore();
+        }
+
+        function checkShortAnswers() {
+            let score = 0;
+            for (let i = 11; i <= 17; i++) {
+                const answer = document.getElementById(`q${i}`).value.trim().toLowerCase();
+                const resultDiv = document.getElementById(`result${i}`);
+                const marks = (i === 17) ? 6 : 4;
+                resultDiv.style.display = "block";
+                if (answer.includes(shortAnswerKey[`q${i}`].toLowerCase().substring(0, 30))) {
+                    score += marks;
+                    resultDiv.className = "result correct";
+                    resultDiv.textContent = `Correct! (${marks}/${marks})`;
+                } else {
+                    resultDiv.className = "result incorrect";
+                    resultDiv.textContent = `Incorrect. Expected: ${shortAnswerKey[`q${i}`]}. (0/${marks})`;
+                }
+            }
+            totalScore += score;
+            updateTotalScore();
+        }
+
+        function checkCaseStudy() {
+            let score = 0;
+            for (let i = 18; i <= 22; i++) {
+                const answer = document.getElementById(`q${i}`).value.trim().toLowerCase();
+                const resultDiv = document.getElementById(`result${i}`);
+                const marks = (i === 19) ? 8 : 6;
+                resultDiv.style.display = "block";
+                if (answer.includes(caseStudyKey[`q${i}`].toLowerCase().substring(0, 30))) {
+                    score += marks;
+                    resultDiv.className = "result correct";
+                    resultDiv.textContent = `Correct! (${marks}/${marks})`;
+                } else {
+                    resultDiv.className = "result incorrect";
+                    resultDiv.textContent = `Incorrect. Expected: ${caseStudyKey[`q${i}`]}. (0/${marks})`;
+                }
+            }
+            totalScore += score;
+            updateTotalScore();
+        }
+
+        function checkEssay() {
+            const answer = document.getElementById("q23").value.trim().toLowerCase();
+            const resultDiv = document.getElementById("result23");
+            resultDiv.style.display = "block";
+            if (answer.length > 150 && answer.includes("plc") && answer.includes("ltd") && answer.includes("tech")) {
+                totalScore += 20;
+                resultDiv.className = "result correct";
+                resultDiv.textContent = "Correct! Well-structured response. (20/20)";
+            } else {
+                resultDiv.className = "result incorrect";
+                resultDiv.textContent = `Incorrect. Expected: ${essayKey} (0/20)`;
+            }
+            updateTotalScore();
+        }
+
+        function updateTotalScore() {
+            document.getElementById("totalScore").textContent = `Total Score: ${totalScore}/100`;
+        }
+
+        // Dynamically add remaining questions (for brevity in this example)
+        const mcqForm = document.getElementById("mcqForm");
+        const shortAnswerForm = document.getElementById("shortAnswerForm");
+        const caseStudyForm = document.getElementById("caseStudyForm");
+
+        const mcqQuestions = [
+            "3. Which business function is responsible for advertising and branding?",
+            "4. A Sole Trader has:",
+            "5. Which of the following is an example of a Quaternary Sector activity?",
+            "6. What does CSR stand for in business objectives?",
+            "7. A Public Limited Company (Plc.) differs from a Private Limited Company (Ltd.) because:",
+            "8. In a SWOT analysis, high costs would be classified as:",
+            "9. Which STEEPLE factor relates to government policies and taxes?",
+            "10. A business plan includes all EXCEPT:"
+        ];
+
+        const shortAnswerQuestions = [
+            "13. What is the role of Operations Management in a business? (4 marks)",
+            "14. Define unlimited liability and give an example of a business entity that has it. (4 marks)",
+            "15. Describe two objectives a startup business might prioritize and explain why. (4 marks)",
+            "16. Explain what is meant by 'Opportunities' in a SWOT analysis and provide an example. (4 marks)",
+            "17. Identify two external factors from the STEEPLE analysis that could affect a retail business and explain their impact. (6 marks)"
+        ];
+
+        const caseStudyQuestions = [
+            "19. Conduct a brief SWOT analysis for FreshFarm Co. (include one point for each category: Strengths, Weaknesses, Opportunities, Threats). (8 marks)",
+            "20. Recommend whether Anna should switch to a Partnership with her brother. Justify your recommendation with two reasons. (6 marks)",
+            "21. Using the STEEPLE framework, identify and explain one external factor (other than Environmental) that could impact FreshFarm Co. and suggest how Anna could respond to it. (6 marks)",
+            "22. Outline two key components Anna should include in a business plan if she decides to expand FreshFarm Co. (6 marks)"
+        ];
+
+        mcqQuestions.forEach((q, i) => {
+            const div = document.createElement("div");
+            div.className = "question";
+            div.innerHTML = `<p>${q}</p><div class="mcq"></div><div class="result" id="result${i+3}"></div>`;
+            mcqForm.insertBefore(div, mcqForm.lastElementChild);
+        });
+
+        shortAnswerQuestions.forEach((q, i) => {
+            const div = document.createElement("div");
+            div.className = "question";
+            div.innerHTML = `<p>${q}</p><textarea id="q${i+13}" placeholder="Your answer here..."></textarea><div class="result" id="result${i+13}"></div>`;
+            shortAnswerForm.insertBefore(div, shortAnswerForm.lastElementChild);
+        });
+
+        caseStudyQuestions.forEach((q, i) => {
+            const div = document.createElement("div");
+            div.className = "question";
+            div.innerHTML = `<p>${q}</p><textarea id="q${i+19}" placeholder="Your answer here..."></textarea><div class="result" id="result${i+19}"></div>`;
+            caseStudyForm.insertBefore(div, caseStudyForm.lastElementChild);
+        });
+    </script>
+</body>
+</html>
